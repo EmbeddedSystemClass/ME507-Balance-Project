@@ -1,0 +1,189 @@
+\hypertarget{classBalance}{}\section{Balance Class Reference}
+\label{classBalance}\index{Balance@{Balance}}
+
+
+A controller class to read the sensors and control the motors.  
+
+
+
+
+{\ttfamily \#include $<$Balance.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBalance_aa38ff4830ce31f669b4e6fe9c530ebc4}{Balance} ()
+\begin{DoxyCompactList}\small\item\em Creates a controller which holds the functions that determine actuation signal. \end{DoxyCompactList}\item 
+void \hyperlink{classBalance_aa89fe806776052b38b9ae5e49577f1f3}{set\+\_\+gains} (void)
+\begin{DoxyCompactList}\small\item\em Set proportional and integral control gains. \end{DoxyCompactList}\item 
+void \hyperlink{classBalance_a9ffdc7dda670129bb61697449f2fd846}{convert} (\hyperlink{structaccelBuf}{accel\+Buf} buffer)
+\begin{DoxyCompactList}\small\item\em Averages the previous 5 I\+MU values to avoid unwanted noise. \end{DoxyCompactList}\item 
+void \hyperlink{classBalance_a6ad17cb4f844490c1d127a7006457f41}{set\+\_\+setpoint} (void)
+\begin{DoxyCompactList}\small\item\em Dynamically adjusts the setpoint value. \end{DoxyCompactList}\item 
+void \hyperlink{classBalance_abd8d68db5c2b4ea7c3db8bd565589051}{control} ()
+\begin{DoxyCompactList}\small\item\em Applies PI control to output a duty cycle for each motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classBalance_a69636e840985b0b556f5289955305b0e}{kp} = 0\hypertarget{classBalance_a69636e840985b0b556f5289955305b0e}{}\label{classBalance_a69636e840985b0b556f5289955305b0e}
+
+\begin{DoxyCompactList}\small\item\em Proportional control gain. \end{DoxyCompactList}\item 
+float \hyperlink{classBalance_a926a86bdc9a6d52ba616dc8beb1d3a98}{ki} = 0\hypertarget{classBalance_a926a86bdc9a6d52ba616dc8beb1d3a98}{}\label{classBalance_a926a86bdc9a6d52ba616dc8beb1d3a98}
+
+\begin{DoxyCompactList}\small\item\em Integral control gain. \end{DoxyCompactList}\item 
+float \hyperlink{classBalance_af88044329c863eb6847338e443f7a840}{kg} = 0\hypertarget{classBalance_af88044329c863eb6847338e443f7a840}{}\label{classBalance_af88044329c863eb6847338e443f7a840}
+
+\begin{DoxyCompactList}\small\item\em Gyroscope sensitivity gain. \end{DoxyCompactList}\item 
+float \hyperlink{classBalance_a94ea3cf125d0741f620c76dd851e50d1}{set\+\_\+x} = 0\hypertarget{classBalance_a94ea3cf125d0741f620c76dd851e50d1}{}\label{classBalance_a94ea3cf125d0741f620c76dd851e50d1}
+
+\begin{DoxyCompactList}\small\item\em Setpoints for acceleration compare in terms of mG. \end{DoxyCompactList}\item 
+float \hyperlink{classBalance_a4c1a5b2446c3cb493227db2b4492f18a}{set\+\_\+y} = 0\hypertarget{classBalance_a4c1a5b2446c3cb493227db2b4492f18a}{}\label{classBalance_a4c1a5b2446c3cb493227db2b4492f18a}
+
+\begin{DoxyCompactList}\small\item\em Setpoints for acceleration compare in terms of mG. \end{DoxyCompactList}\item 
+float \hyperlink{classBalance_ad60ec931a4eb0d993805cf4f67e506ec}{esum\+\_\+x} = 0\hypertarget{classBalance_ad60ec931a4eb0d993805cf4f67e506ec}{}\label{classBalance_ad60ec931a4eb0d993805cf4f67e506ec}
+
+\begin{DoxyCompactList}\small\item\em Error sum for integral control in x direction. \end{DoxyCompactList}\item 
+float \hyperlink{classBalance_ab33dd36995e8099946a2ac783b43e0b8}{esum\+\_\+y} = 0\hypertarget{classBalance_ab33dd36995e8099946a2ac783b43e0b8}{}\label{classBalance_ab33dd36995e8099946a2ac783b43e0b8}
+
+\begin{DoxyCompactList}\small\item\em Error sum for integral control in y direction. \end{DoxyCompactList}\item 
+float \hyperlink{classBalance_abddf9398bdeb786166f36621c0a4d12e}{x\+\_\+accel}\hypertarget{classBalance_abddf9398bdeb786166f36621c0a4d12e}{}\label{classBalance_abddf9398bdeb786166f36621c0a4d12e}
+
+\begin{DoxyCompactList}\small\item\em Averaged acceleration in the x direction. \end{DoxyCompactList}\item 
+float \hyperlink{classBalance_a3407d85f72540873d148b186954b4c7a}{y\+\_\+accel}\hypertarget{classBalance_a3407d85f72540873d148b186954b4c7a}{}\label{classBalance_a3407d85f72540873d148b186954b4c7a}
+
+\begin{DoxyCompactList}\small\item\em Averaged acceleration in the y direction. \end{DoxyCompactList}\item 
+float \hyperlink{classBalance_a81e0ec6deb3f455643121fbb50e17070}{z\+\_\+accel}\hypertarget{classBalance_a81e0ec6deb3f455643121fbb50e17070}{}\label{classBalance_a81e0ec6deb3f455643121fbb50e17070}
+
+\begin{DoxyCompactList}\small\item\em Averaged acceleration in the z direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A controller class to read the sensors and control the motors. 
+
+The feedback from the I\+MU is converted to g\textquotesingle{}s, compared to the appropriate reference value, and the error undergoes proportianal and integral algorithms to output an actuation signal for the motor driver. \begin{DoxyReturn}{Returns}
+A duty cycle expressed as an 8-\/bit integer for the range -\/100 to 100. 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file Balance.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Balance@{Balance}!Balance@{Balance}}
+\index{Balance@{Balance}!Balance@{Balance}}
+\subsubsection[{\texorpdfstring{Balance()}{Balance()}}]{\setlength{\rightskip}{0pt plus 5cm}Balance\+::\+Balance (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classBalance_aa38ff4830ce31f669b4e6fe9c530ebc4}{}\label{classBalance_aa38ff4830ce31f669b4e6fe9c530ebc4}
+
+
+Creates a controller which holds the functions that determine actuation signal. 
+
+This is a simple constructor. It does not require any setup. 
+
+Definition at line 17 of file Balance.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Balance@{Balance}!control@{control}}
+\index{control@{control}!Balance@{Balance}}
+\subsubsection[{\texorpdfstring{control()}{control()}}]{\setlength{\rightskip}{0pt plus 5cm}void Balance\+::control (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classBalance_abd8d68db5c2b4ea7c3db8bd565589051}{}\label{classBalance_abd8d68db5c2b4ea7c3db8bd565589051}
+
+
+Applies PI control to output a duty cycle for each motor. 
+
+Uses the error signal calculated from the setpoints for x and y to the current accelerations sensed in the x and y directions to calculate the appropriate actuation signal. The control gains convert the error in mG to voltage. 
+
+Definition at line 88 of file Balance.\+cpp.
+
+
+
+References esum\+\_\+x, esum\+\_\+y, ki, kp, motor\+\_\+\+A\+\_\+actuation\+\_\+signal, motor\+\_\+\+B\+\_\+actuation\+\_\+signal, set\+\_\+x, set\+\_\+y, x\+\_\+accel, and y\+\_\+accel.
+
+
+
+Referenced by task\+\_\+controller\+::run().
+
+\index{Balance@{Balance}!convert@{convert}}
+\index{convert@{convert}!Balance@{Balance}}
+\subsubsection[{\texorpdfstring{convert(accel\+Buf buffer)}{convert(accelBuf buffer)}}]{\setlength{\rightskip}{0pt plus 5cm}void Balance\+::convert (
+\begin{DoxyParamCaption}
+\item[{{\bf accel\+Buf}}]{buffer}
+\end{DoxyParamCaption}
+)}\hypertarget{classBalance_a9ffdc7dda670129bb61697449f2fd846}{}\label{classBalance_a9ffdc7dda670129bb61697449f2fd846}
+
+
+Averages the previous 5 I\+MU values to avoid unwanted noise. 
+
+Takes the \hyperlink{structaccelBuf}{accel\+Buf} structure, creates a total of all available X, Y and Z values and finds the average 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & A structure that holds the previous 5 acceleration data points for X, Y, and Z axis of the I\+MU \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file Balance.\+cpp.
+
+
+
+References accel\+Buf\+::accel\+\_\+buffer, accel\+Data\+::data, x\+\_\+accel, y\+\_\+accel, and z\+\_\+accel.
+
+
+
+Referenced by task\+\_\+controller\+::run().
+
+\index{Balance@{Balance}!set\+\_\+gains@{set\+\_\+gains}}
+\index{set\+\_\+gains@{set\+\_\+gains}!Balance@{Balance}}
+\subsubsection[{\texorpdfstring{set\+\_\+gains(void)}{set_gains(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Balance\+::set\+\_\+gains (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classBalance_aa89fe806776052b38b9ae5e49577f1f3}{}\label{classBalance_aa89fe806776052b38b9ae5e49577f1f3}
+
+
+Set proportional and integral control gains. 
+
+Allows the user to input the necessary control gains. 
+
+Definition at line 26 of file Balance.\+cpp.
+
+
+
+References ki, and kp.
+
+
+
+Referenced by task\+\_\+controller\+::run().
+
+\index{Balance@{Balance}!set\+\_\+setpoint@{set\+\_\+setpoint}}
+\index{set\+\_\+setpoint@{set\+\_\+setpoint}!Balance@{Balance}}
+\subsubsection[{\texorpdfstring{set\+\_\+setpoint(void)}{set_setpoint(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Balance\+::set\+\_\+setpoint (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classBalance_a6ad17cb4f844490c1d127a7006457f41}{}\label{classBalance_a6ad17cb4f844490c1d127a7006457f41}
+
+
+Dynamically adjusts the setpoint value. 
+
+Uses acceleration information from both I\+M\+Us to output an appropriate reference value to compare against the feedback. This function was left simple for the controller used, but would ultimately be used to change the set points of the controller. 
+
+Definition at line 68 of file Balance.\+cpp.
+
+
+
+References set\+\_\+x, and set\+\_\+y.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Balance.\+h\item 
+\hyperlink{Balance_8cpp}{Balance.\+cpp}\end{DoxyCompactItemize}

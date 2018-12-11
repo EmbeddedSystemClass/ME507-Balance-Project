@@ -1,0 +1,99 @@
+\hypertarget{shares_8h}{}\section{shares.\+h File Reference}
+\label{shares_8h}\index{shares.\+h@{shares.\+h}}
+
+
+Declarations for inter-\/task data communication items (shares and queues).  
+
+
+{\ttfamily \#include \char`\"{}emstream.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}adc\+\_\+driver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}taskshare.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}taskqueue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}textqueue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logger\+\_\+config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}acceldata.\+h\char`\"{}}\\*
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Task\+Share$<$ int16\+\_\+t $>$ $\ast$ \hyperlink{shares_8h_ae468bde2d29d8297eab6cda724eee54d}{motor\+\_\+\+A\+\_\+actuation\+\_\+signal}
+\begin{DoxyCompactList}\small\item\em Pointer to a queue for text to be displayed by the UI. \end{DoxyCompactList}\item 
+Task\+Share$<$ int16\+\_\+t $>$ $\ast$ \hyperlink{shares_8h_aa376a20f7485fe6d8317ca22d7d3c8d4}{motor\+\_\+\+B\+\_\+actuation\+\_\+signal}
+\begin{DoxyCompactList}\small\item\em Pointer to a share of the motor B actuation signal. \end{DoxyCompactList}\item 
+Task\+Share$<$ \hyperlink{structaccelBuf}{accel\+Buf} $>$ $\ast$ \hyperlink{shares_8h_ac12b6d4b968478cf62c26aed3a2e13aa}{accelerometer\+\_\+\+A\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Pointer to a share for accelerometer A data. \end{DoxyCompactList}\item 
+Task\+Share$<$ \hyperlink{structaccelBuf}{accel\+Buf} $>$ $\ast$ \hyperlink{shares_8h_a4950eab2a423bad3bf4ef929eb3c4960}{accelerometer\+\_\+\+B\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Pointer to a share for accelerometer B data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Declarations for inter-\/task data communication items (shares and queues). 
+
+This file contains {\ttfamily extern} declarations for queues and other inter-\/task data communication objects used in a M\+E405/507/\+Poly\+D\+AQ Free\+R\+T\+OS project.
+
+Revisions\+: \begin{DoxyItemize}
+\item 09-\/30-\/2012 J\+RR Original file was a one-\/file demonstration with two tasks \item 10-\/05-\/2012 J\+RR Split into multiple files, one for each task plus a main one \item 10-\/29-\/2012 J\+RR Reorganized with global queue and shared data references \item 06-\/18-\/2014 J\+RR Modified into Chibi\+O\+S/\+S\+T\+M32\+F4 test version\end{DoxyItemize}
+License\+: This file is copyright 2014 by JR Ridgely and released under the Lesser G\+NU Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+\subsection{Variable Documentation}
+\index{shares.\+h@{shares.\+h}!accelerometer\+\_\+\+A\+\_\+data@{accelerometer\+\_\+\+A\+\_\+data}}
+\index{accelerometer\+\_\+\+A\+\_\+data@{accelerometer\+\_\+\+A\+\_\+data}!shares.\+h@{shares.\+h}}
+\subsubsection[{\texorpdfstring{accelerometer\+\_\+\+A\+\_\+data}{accelerometer_A_data}}]{\setlength{\rightskip}{0pt plus 5cm}Task\+Share$<${\bf accel\+Buf}$>$$\ast$ accelerometer\+\_\+\+A\+\_\+data}\hypertarget{shares_8h_ac12b6d4b968478cf62c26aed3a2e13aa}{}\label{shares_8h_ac12b6d4b968478cf62c26aed3a2e13aa}
+
+
+Pointer to a share for accelerometer A data. 
+
+Buffer size 10 of X,Y, and Z axis of accelerometer A 
+
+Definition at line 66 of file main.\+cpp.
+
+
+
+Referenced by main(), task\+\_\+controller\+::run(), and task\+\_\+imu\+::run().
+
+\index{shares.\+h@{shares.\+h}!accelerometer\+\_\+\+B\+\_\+data@{accelerometer\+\_\+\+B\+\_\+data}}
+\index{accelerometer\+\_\+\+B\+\_\+data@{accelerometer\+\_\+\+B\+\_\+data}!shares.\+h@{shares.\+h}}
+\subsubsection[{\texorpdfstring{accelerometer\+\_\+\+B\+\_\+data}{accelerometer_B_data}}]{\setlength{\rightskip}{0pt plus 5cm}Task\+Share$<${\bf accel\+Buf}$>$$\ast$ accelerometer\+\_\+\+B\+\_\+data}\hypertarget{shares_8h_a4950eab2a423bad3bf4ef929eb3c4960}{}\label{shares_8h_a4950eab2a423bad3bf4ef929eb3c4960}
+
+
+Pointer to a share for accelerometer B data. 
+
+Buffer size 10 of X,Y, and Z axis of accelerometer B 
+
+Definition at line 71 of file main.\+cpp.
+
+
+
+Referenced by main().
+
+\index{shares.\+h@{shares.\+h}!motor\+\_\+\+A\+\_\+actuation\+\_\+signal@{motor\+\_\+\+A\+\_\+actuation\+\_\+signal}}
+\index{motor\+\_\+\+A\+\_\+actuation\+\_\+signal@{motor\+\_\+\+A\+\_\+actuation\+\_\+signal}!shares.\+h@{shares.\+h}}
+\subsubsection[{\texorpdfstring{motor\+\_\+\+A\+\_\+actuation\+\_\+signal}{motor_A_actuation_signal}}]{\setlength{\rightskip}{0pt plus 5cm}Task\+Share$<$int16\+\_\+t$>$$\ast$ motor\+\_\+\+A\+\_\+actuation\+\_\+signal}\hypertarget{shares_8h_ae468bde2d29d8297eab6cda724eee54d}{}\label{shares_8h_ae468bde2d29d8297eab6cda724eee54d}
+
+
+Pointer to a queue for text to be displayed by the UI. 
+
+This queue can be used by all the tasks to print messages without having to wait for the comparatively slow serial port.\+Pointer to a share of the motor A actuation signal.
+
+This shared pointer contains the memory address of the motorA actuation signal. 
+
+Definition at line 55 of file main.\+cpp.
+
+
+
+Referenced by Balance\+::control(), main(), and task\+\_\+motor\+::run().
+
+\index{shares.\+h@{shares.\+h}!motor\+\_\+\+B\+\_\+actuation\+\_\+signal@{motor\+\_\+\+B\+\_\+actuation\+\_\+signal}}
+\index{motor\+\_\+\+B\+\_\+actuation\+\_\+signal@{motor\+\_\+\+B\+\_\+actuation\+\_\+signal}!shares.\+h@{shares.\+h}}
+\subsubsection[{\texorpdfstring{motor\+\_\+\+B\+\_\+actuation\+\_\+signal}{motor_B_actuation_signal}}]{\setlength{\rightskip}{0pt plus 5cm}Task\+Share$<$int16\+\_\+t$>$$\ast$ motor\+\_\+\+B\+\_\+actuation\+\_\+signal}\hypertarget{shares_8h_aa376a20f7485fe6d8317ca22d7d3c8d4}{}\label{shares_8h_aa376a20f7485fe6d8317ca22d7d3c8d4}
+
+
+Pointer to a share of the motor B actuation signal. 
+
+This shared pointer contains the memory address of the motorB actuation signal. 
+
+Definition at line 61 of file main.\+cpp.
+
+
+
+Referenced by Balance\+::control(), main(), and task\+\_\+motor\+::run().
+

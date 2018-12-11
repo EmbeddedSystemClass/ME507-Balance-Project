@@ -1,0 +1,122 @@
+\hypertarget{classtask__imu}{}\section{task\+\_\+imu Class Reference}
+\label{classtask__imu}\index{task\+\_\+imu@{task\+\_\+imu}}
+
+
+Task which reads acceleration data from an accelerometer.  
+
+
+
+
+{\ttfamily \#include $<$task\+\_\+imu.\+h$>$}
+
+Inheritance diagram for task\+\_\+imu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtask__imu}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtask__imu_a2e791d5b78ce8691e1086ea369609b74}{task\+\_\+imu} (const char $\ast$p\+\_\+name, unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+PE prio, size\+\_\+t stacked, emstream $\ast$serpt, mma8452q $\ast$accelerometer\+In)
+\begin{DoxyCompactList}\small\item\em The constructor for the task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classtask__imu_ae05d282ee631de7e7c958b9a37c2651d}{run} (void)
+\begin{DoxyCompactList}\small\item\em The run function for the task. No states in this run function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+port\+Tick\+Type \hyperlink{classtask__imu_ab0a395d04d3293435477ff852ad5ebdb}{ms\+\_\+per\+\_\+sample}\hypertarget{classtask__imu_ab0a395d04d3293435477ff852ad5ebdb}{}\label{classtask__imu_ab0a395d04d3293435477ff852ad5ebdb}
+
+\begin{DoxyCompactList}\small\item\em The number of milliseconds per sample taken by this task. \end{DoxyCompactList}\item 
+mma8452q $\ast$ \hyperlink{classtask__imu_af553e9fc60df47d03c879e94487ac2fa}{accelerometer}\hypertarget{classtask__imu_af553e9fc60df47d03c879e94487ac2fa}{}\label{classtask__imu_af553e9fc60df47d03c879e94487ac2fa}
+
+\begin{DoxyCompactList}\small\item\em A pointer to an mma8452q accelerometer used by this task. Accelerometer must be initialized and active. \end{DoxyCompactList}\item 
+int16\+\_\+t \hyperlink{classtask__imu_a5b768a218bf1d4099177009f819ef8d0}{offsetA} \mbox{[}3\mbox{]} = \{-\/500, 300, 50\}\hypertarget{classtask__imu_a5b768a218bf1d4099177009f819ef8d0}{}\label{classtask__imu_a5b768a218bf1d4099177009f819ef8d0}
+
+\begin{DoxyCompactList}\small\item\em Values used in calibration of I\+MU from its offset. \end{DoxyCompactList}\item 
+float \hyperlink{classtask__imu_a255abac4e865398955b0a384c808d64b}{calibrateA} \mbox{[}3\mbox{]} = \{16.\+425, 16.\+1, 16.\+15\}\hypertarget{classtask__imu_a255abac4e865398955b0a384c808d64b}{}\label{classtask__imu_a255abac4e865398955b0a384c808d64b}
+
+\begin{DoxyCompactList}\small\item\em Values used in calibrating I\+MU to mG. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Task which reads acceleration data from an accelerometer. 
+
+This task reads the X, Y, and Z axis accelerations from an mma8452q accelerometer and updates a task share called accelerometer\+\_\+data which is a buffer that holds the previous 5 acceleration data points 
+
+Definition at line 25 of file task\+\_\+imu.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{task\+\_\+imu@{task\+\_\+imu}!task\+\_\+imu@{task\+\_\+imu}}
+\index{task\+\_\+imu@{task\+\_\+imu}!task\+\_\+imu@{task\+\_\+imu}}
+\subsubsection[{\texorpdfstring{task\+\_\+imu(const char $\ast$p\+\_\+name, unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+P\+E prio, size\+\_\+t stacked, emstream $\ast$serpt, mma8452q $\ast$accelerometer\+In)}{task_imu(const char *p_name, unsigned portBASE_TYPE prio, size_t stacked, emstream *serpt, mma8452q *accelerometerIn)}}]{\setlength{\rightskip}{0pt plus 5cm}task\+\_\+imu\+::task\+\_\+imu (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\+\_\+name, }
+\item[{unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+PE}]{prio, }
+\item[{size\+\_\+t}]{stacked, }
+\item[{emstream $\ast$}]{serpt, }
+\item[{mma8452q $\ast$}]{accelerometer\+In}
+\end{DoxyParamCaption}
+)}\hypertarget{classtask__imu_a2e791d5b78ce8691e1086ea369609b74}{}\label{classtask__imu_a2e791d5b78ce8691e1086ea369609b74}
+
+
+The constructor for the task. 
+
+This constructor creates an imu task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & A name for this task \\
+\hline
+{\em prio} & The priority at which this task will run \\
+\hline
+{\em stacked} & The stack space to be used by the task \\
+\hline
+{\em serpt} & A pointer to a serial device on which debugging messages are shown \\
+\hline
+{\em accelerometer\+In} & A pointer to an accelerometer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file task\+\_\+imu.\+cpp.
+
+
+
+References accelerometer.
+
+
+
+\subsection{Member Function Documentation}
+\index{task\+\_\+imu@{task\+\_\+imu}!run@{run}}
+\index{run@{run}!task\+\_\+imu@{task\+\_\+imu}}
+\subsubsection[{\texorpdfstring{run(void)}{run(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void task\+\_\+imu\+::run (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classtask__imu_ae05d282ee631de7e7c958b9a37c2651d}{}\label{classtask__imu_ae05d282ee631de7e7c958b9a37c2651d}
+
+
+The run function for the task. No states in this run function. 
+
+The run method that runs the motor task code.
+
+This method sets the actuation signal of each motor 
+
+Definition at line 33 of file task\+\_\+imu.\+cpp.
+
+
+
+References accel\+Buf\+::accel\+\_\+buffer, accelerometer, accelerometer\+\_\+\+A\+\_\+data, calibrateA, accel\+Data\+::data, and offsetA.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{task__imu_8h}{task\+\_\+imu.\+h}\item 
+\hyperlink{task__imu_8cpp}{task\+\_\+imu.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,122 @@
+\hypertarget{classtask__motor}{}\section{task\+\_\+motor Class Reference}
+\label{classtask__motor}\index{task\+\_\+motor@{task\+\_\+motor}}
+
+
+Task which takes in an initialized motor and sets the actuation signal.  
+
+
+
+
+{\ttfamily \#include $<$task\+\_\+motor.\+h$>$}
+
+Inheritance diagram for task\+\_\+motor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtask__motor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtask__motor_a3662c77ae8591a397ba53cf1640540d8}{task\+\_\+motor} (const char $\ast$p\+\_\+name, unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+PE prio, size\+\_\+t stacked, emstream $\ast$serpt, \hyperlink{classMotor}{Motor} $\ast$Motor\+In, uint8\+\_\+t motor\+\_\+num)
+\begin{DoxyCompactList}\small\item\em This constructor creates the motor task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classtask__motor_a895a075ec470c9d5a07b8959de06aacd}{run} (void)
+\begin{DoxyCompactList}\small\item\em The function which does all the work for the motor task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+port\+Tick\+Type \hyperlink{classtask__motor_a06a73825a67eaf5a5a8e31152189932f}{ms\+\_\+per\+\_\+sample}\hypertarget{classtask__motor_a06a73825a67eaf5a5a8e31152189932f}{}\label{classtask__motor_a06a73825a67eaf5a5a8e31152189932f}
+
+\begin{DoxyCompactList}\small\item\em The number of milliseconds per sample taken by this task. \end{DoxyCompactList}\item 
+\hyperlink{classMotor}{Motor} $\ast$ \hyperlink{classtask__motor_a3c6c88561488febb3bbd71aec7ba1c8f}{motor}\hypertarget{classtask__motor_a3c6c88561488febb3bbd71aec7ba1c8f}{}\label{classtask__motor_a3c6c88561488febb3bbd71aec7ba1c8f}
+
+\begin{DoxyCompactList}\small\item\em A pointer to motor drivers used by this task. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classtask__motor_a82f00436863da33b154ce88f1735c69e}{motor\+\_\+val}\hypertarget{classtask__motor_a82f00436863da33b154ce88f1735c69e}{}\label{classtask__motor_a82f00436863da33b154ce88f1735c69e}
+
+\begin{DoxyCompactList}\small\item\em A value to distinguish motors for the task shares used. 0 = motor\+\_\+\+A\+\_\+actuation\+Signal 1 = motor\+\_\+\+B\+\_\+actuation\+Signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Task which takes in an initialized motor and sets the actuation signal. 
+
+This task acquires actuation signal from a control task and sets the actuation to each motor 
+
+Definition at line 24 of file task\+\_\+motor.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{task\+\_\+motor@{task\+\_\+motor}!task\+\_\+motor@{task\+\_\+motor}}
+\index{task\+\_\+motor@{task\+\_\+motor}!task\+\_\+motor@{task\+\_\+motor}}
+\subsubsection[{\texorpdfstring{task\+\_\+motor(const char $\ast$p\+\_\+name, unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+P\+E prio, size\+\_\+t stacked, emstream $\ast$serpt, Motor $\ast$\+Motor\+In, uint8\+\_\+t motor\+\_\+num)}{task_motor(const char *p_name, unsigned portBASE_TYPE prio, size_t stacked, emstream *serpt, Motor *MotorIn, uint8_t motor_num)}}]{\setlength{\rightskip}{0pt plus 5cm}task\+\_\+motor\+::task\+\_\+motor (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\+\_\+name, }
+\item[{unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+PE}]{prio, }
+\item[{size\+\_\+t}]{stacked, }
+\item[{emstream $\ast$}]{serpt, }
+\item[{{\bf Motor} $\ast$}]{motor\+\_\+in, }
+\item[{uint8\+\_\+t}]{motor\+\_\+num}
+\end{DoxyParamCaption}
+)}\hypertarget{classtask__motor_a3662c77ae8591a397ba53cf1640540d8}{}\label{classtask__motor_a3662c77ae8591a397ba53cf1640540d8}
+
+
+This constructor creates the motor task. 
+
+This constructor creates a motor task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & A name for this task \\
+\hline
+{\em prio} & The priority at which this task will run (should be low) \\
+\hline
+{\em stacked} & The stack space to be used by the task (not much) \\
+\hline
+{\em serpt} & A pointer to a serial device on which debugging messages are shown \\
+\hline
+{\em motor\+\_\+in} & A pointer to a motor driver \\
+\hline
+{\em motor\+\_\+num} & A value to distinguish which task share to use. 0 = motorA 1 = motorB \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file task\+\_\+motor.\+cpp.
+
+
+
+References motor, and motor\+\_\+val.
+
+
+
+\subsection{Member Function Documentation}
+\index{task\+\_\+motor@{task\+\_\+motor}!run@{run}}
+\index{run@{run}!task\+\_\+motor@{task\+\_\+motor}}
+\subsubsection[{\texorpdfstring{run(void)}{run(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void task\+\_\+motor\+::run (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classtask__motor_a895a075ec470c9d5a07b8959de06aacd}{}\label{classtask__motor_a895a075ec470c9d5a07b8959de06aacd}
+
+
+The function which does all the work for the motor task. 
+
+The run method that runs the motor task code.
+
+This method sets the actuation signal of the motor from the appropriate task share 
+
+Definition at line 39 of file task\+\_\+motor.\+cpp.
+
+
+
+References motor, motor\+\_\+\+A\+\_\+actuation\+\_\+signal, motor\+\_\+\+B\+\_\+actuation\+\_\+signal, motor\+\_\+val, and Motor\+::set\+Actuation().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{task__motor_8h}{task\+\_\+motor.\+h}\item 
+\hyperlink{task__motor_8cpp}{task\+\_\+motor.\+cpp}\end{DoxyCompactItemize}

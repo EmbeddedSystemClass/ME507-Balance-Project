@@ -1,0 +1,12 @@
+\hypertarget{motorDriver_8h}{}\section{motor\+Driver.\+h File Reference}
+\label{motorDriver_8h}\index{motor\+Driver.\+h@{motor\+Driver.\+h}}
+{\ttfamily \#include \char`\"{}hw\+\_\+pwm.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMotor}{Motor}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains a class for a motor driver which uses two pwm pins and an enable pin to control a motor. The actuation signal is saturated to between 100 and -\/100 which corresponds to a forwards and backwards 100\% duty cycle. Pwm signal is only output from one pin at a time (other pin is 0\% duty cycle) 

@@ -1,0 +1,110 @@
+\hypertarget{classtask__controller}{}\section{task\+\_\+controller Class Reference}
+\label{classtask__controller}\index{task\+\_\+controller@{task\+\_\+controller}}
+
+
+Task which uses accelerometer data to calculate motor actuation signals.  
+
+
+
+
+{\ttfamily \#include $<$task\+\_\+controller.\+h$>$}
+
+Inheritance diagram for task\+\_\+controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtask__controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtask__controller_a35efdd65ff9e1c4b883003ed664c0662}{task\+\_\+controller} (const char $\ast$p\+\_\+name, unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+PE prio, size\+\_\+t stacked, emstream $\ast$serpt, \hyperlink{classBalance}{Balance} $\ast$\hyperlink{classtask__controller_a52518117258982efd9fbf567d597aa86}{controller})
+\begin{DoxyCompactList}\small\item\em The constructor sets up the task object. \end{DoxyCompactList}\item 
+void \hyperlink{classtask__controller_a06d4bf08d08ae59c4693028ec009bb84}{run} (void)
+\begin{DoxyCompactList}\small\item\em The run method call the functions of the controller in a loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBalance}{Balance} $\ast$ \hyperlink{classtask__controller_a52518117258982efd9fbf567d597aa86}{controller}\hypertarget{classtask__controller_a52518117258982efd9fbf567d597aa86}{}\label{classtask__controller_a52518117258982efd9fbf567d597aa86}
+
+\begin{DoxyCompactList}\small\item\em The controller that is used by the task to implement the control algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Task which uses accelerometer data to calculate motor actuation signals. 
+
+This task uses the task share data made available from the I\+MU task to set the task shares for motor A and B actuation signals. 
+
+Definition at line 28 of file task\+\_\+controller.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{task\+\_\+controller@{task\+\_\+controller}!task\+\_\+controller@{task\+\_\+controller}}
+\index{task\+\_\+controller@{task\+\_\+controller}!task\+\_\+controller@{task\+\_\+controller}}
+\subsubsection[{\texorpdfstring{task\+\_\+controller(const char $\ast$p\+\_\+name, unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+P\+E prio, size\+\_\+t stacked, emstream $\ast$serpt, Balance $\ast$controller)}{task_controller(const char *p_name, unsigned portBASE_TYPE prio, size_t stacked, emstream *serpt, Balance *controller)}}]{\setlength{\rightskip}{0pt plus 5cm}task\+\_\+controller\+::task\+\_\+controller (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p\+\_\+name, }
+\item[{unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+PE}]{prio, }
+\item[{size\+\_\+t}]{stacked, }
+\item[{emstream $\ast$}]{serpt, }
+\item[{{\bf Balance} $\ast$}]{balance\+\_\+controller}
+\end{DoxyParamCaption}
+)}\hypertarget{classtask__controller_a35efdd65ff9e1c4b883003ed664c0662}{}\label{classtask__controller_a35efdd65ff9e1c4b883003ed664c0662}
+
+
+The constructor sets up the task object. 
+
+Constructor for a controller object.
+
+This constructor calls its parent class\textquotesingle{}s constructor to actually do the work of creating the controller task. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & A name for this task \\
+\hline
+{\em prio} & The priority at which this task will run (should be low) \\
+\hline
+{\em stacked} & The stack space to be used by the task (not much) \\
+\hline
+{\em serpt} & A pointer to a serial device on which debugging messages are shown \\
+\hline
+{\em balance\+\_\+controller} & A pointer to a \hyperlink{classBalance}{Balance} controller used to call functions to determine the actuation signal \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file task\+\_\+controller.\+cpp.
+
+
+
+References controller.
+
+
+
+\subsection{Member Function Documentation}
+\index{task\+\_\+controller@{task\+\_\+controller}!run@{run}}
+\index{run@{run}!task\+\_\+controller@{task\+\_\+controller}}
+\subsubsection[{\texorpdfstring{run(void)}{run(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void task\+\_\+controller\+::run (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classtask__controller_a06d4bf08d08ae59c4693028ec009bb84}{}\label{classtask__controller_a06d4bf08d08ae59c4693028ec009bb84}
+
+
+The run method call the functions of the controller in a loop. 
+
+The run method that calculates the actuation signal of motors x and y.
+
+This method 
+
+Definition at line 45 of file task\+\_\+controller.\+cpp.
+
+
+
+References accelerometer\+\_\+\+A\+\_\+data, Balance\+::control(), controller, Balance\+::convert(), and Balance\+::set\+\_\+gains().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{task__controller_8h}{task\+\_\+controller.\+h}\item 
+\hyperlink{task__controller_8cpp}{task\+\_\+controller.\+cpp}\end{DoxyCompactItemize}

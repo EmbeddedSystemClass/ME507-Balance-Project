@@ -1,0 +1,117 @@
+\hypertarget{classMotor}{}\section{Motor Class Reference}
+\label{classMotor}\index{Motor@{Motor}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMotor_af30da76dda1a2a04ce9eff1d6bcb6288}{Motor} (hw\+\_\+pwm $\ast$\hyperlink{classMotor_ac5a66a53cd8f15873185f374a0b3daa9}{motor\+\_\+\+I\+N1}, hw\+\_\+pwm $\ast$\hyperlink{classMotor_a2e359d8bde1615bb483209aa4a0f948d}{motor\+\_\+\+I\+N2}, uint8\+\_\+t In\+\_\+1\+\_\+chan, uint8\+\_\+t In\+\_\+2\+\_\+chan, uint16\+\_\+t E\+N\+\_\+pin\+\_\+num, G\+P\+I\+O\+\_\+\+Type\+Def $\ast$E\+N\+\_\+port, uint32\+\_\+t R\+C\+C\+\_\+\+A\+H\+B1\+Periph)
+\begin{DoxyCompactList}\small\item\em The constructor which initializes class variables and sets the EN pin. \end{DoxyCompactList}\item 
+void \hyperlink{classMotor_a365fc68f12da73850f0d2c122e70d0ec}{set\+Actuation} (int16\+\_\+t actuation\+Signal)
+\begin{DoxyCompactList}\small\item\em The function that saturates and sets the duty cycle for the motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+hw\+\_\+pwm $\ast$ \hyperlink{classMotor_ac5a66a53cd8f15873185f374a0b3daa9}{motor\+\_\+\+I\+N1}\hypertarget{classMotor_ac5a66a53cd8f15873185f374a0b3daa9}{}\label{classMotor_ac5a66a53cd8f15873185f374a0b3daa9}
+
+\begin{DoxyCompactList}\small\item\em A pwm configured pin for a motor lead. \end{DoxyCompactList}\item 
+hw\+\_\+pwm $\ast$ \hyperlink{classMotor_a2e359d8bde1615bb483209aa4a0f948d}{motor\+\_\+\+I\+N2}\hypertarget{classMotor_a2e359d8bde1615bb483209aa4a0f948d}{}\label{classMotor_a2e359d8bde1615bb483209aa4a0f948d}
+
+\begin{DoxyCompactList}\small\item\em A pwm configured pin for a motor lead. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classMotor_a25e145c9db093eba575a76db11429cd0}{I\+N1\+\_\+chan}\hypertarget{classMotor_a25e145c9db093eba575a76db11429cd0}{}\label{classMotor_a25e145c9db093eba575a76db11429cd0}
+
+\begin{DoxyCompactList}\small\item\em The timer channel for the first pwm pin. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classMotor_adf38bf5b263a743bb4ce188cc1188c7b}{I\+N2\+\_\+chan}\hypertarget{classMotor_adf38bf5b263a743bb4ce188cc1188c7b}{}\label{classMotor_adf38bf5b263a743bb4ce188cc1188c7b}
+
+\begin{DoxyCompactList}\small\item\em The timer channel for the second pwm pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file motor\+Driver.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Motor@{Motor}!Motor@{Motor}}
+\index{Motor@{Motor}!Motor@{Motor}}
+\subsubsection[{\texorpdfstring{Motor(hw\+\_\+pwm $\ast$motor\+\_\+\+I\+N1, hw\+\_\+pwm $\ast$motor\+\_\+\+I\+N2, uint8\+\_\+t In\+\_\+1\+\_\+chan, uint8\+\_\+t In\+\_\+2\+\_\+chan, uint16\+\_\+t E\+N\+\_\+pin\+\_\+num, G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+E\+N\+\_\+port, uint32\+\_\+t R\+C\+C\+\_\+\+A\+H\+B1\+Periph)}{Motor(hw_pwm *motor_IN1, hw_pwm *motor_IN2, uint8_t In_1_chan, uint8_t In_2_chan, uint16_t EN_pin_num, GPIO_TypeDef *EN_port, uint32_t RCC_AHB1Periph)}}]{\setlength{\rightskip}{0pt plus 5cm}Motor\+::\+Motor (
+\begin{DoxyParamCaption}
+\item[{hw\+\_\+pwm $\ast$}]{motor\+\_\+\+In\+\_\+1, }
+\item[{hw\+\_\+pwm $\ast$}]{motor\+\_\+\+In\+\_\+2, }
+\item[{uint8\+\_\+t}]{In\+\_\+1\+\_\+chan, }
+\item[{uint8\+\_\+t}]{In\+\_\+2\+\_\+chan, }
+\item[{uint16\+\_\+t}]{E\+N\+\_\+pin\+\_\+num, }
+\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{E\+N\+\_\+port, }
+\item[{uint32\+\_\+t}]{R\+C\+C\+\_\+\+A\+H\+B1\+Periph}
+\end{DoxyParamCaption}
+)}\hypertarget{classMotor_af30da76dda1a2a04ce9eff1d6bcb6288}{}\label{classMotor_af30da76dda1a2a04ce9eff1d6bcb6288}
+
+
+The constructor which initializes class variables and sets the EN pin. 
+
+The constructor for a \hyperlink{classMotor}{Motor} object.
+
+This constructor initializes the class variables and enables the motors EN pin 
+\begin{DoxyParams}{Parameters}
+{\em motor\+\_\+\+In\+\_\+1} & A hw\+\_\+pwm pointer which is initialized for one of the motor leads and has a duty cycle resolution of 100 \\
+\hline
+{\em motor\+\_\+\+In\+\_\+2} & A hw\+\_\+pwm pointer initialized as above for the other motor lead \\
+\hline
+{\em In\+\_\+1\+\_\+chan} & The channel associated with motor\+\_\+\+In\+\_\+1 for setting the duty cycle \\
+\hline
+{\em In\+\_\+2\+\_\+chan} & The channel associated with motor\+\_\+\+In\+\_\+2 for setting the duty cycle \\
+\hline
+{\em E\+N\+\_\+pin\+\_\+num} & The G\+P\+I\+O\+\_\+\+Pin\+\_\+\# for the EN pin \\
+\hline
+{\em E\+N\+\_\+port} & The G\+P\+I\+OX port for the EN pin where X represents the letter of the pin \\
+\hline
+{\em R\+C\+C\+\_\+\+A\+H\+B1\+Periph} & A value associated with initializing the EN pin which uses the port. Ex\+: R\+C\+C\+\_\+\+A\+H\+B1\+Periph\+\_\+\+G\+P\+I\+OA for EN pin in port A \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file motor\+Driver.\+cpp.
+
+
+
+References I\+N1\+\_\+chan, I\+N2\+\_\+chan, motor\+\_\+\+I\+N1, and motor\+\_\+\+I\+N2.
+
+
+
+\subsection{Member Function Documentation}
+\index{Motor@{Motor}!set\+Actuation@{set\+Actuation}}
+\index{set\+Actuation@{set\+Actuation}!Motor@{Motor}}
+\subsubsection[{\texorpdfstring{set\+Actuation(int16\+\_\+t actuation\+Signal)}{setActuation(int16_t actuationSignal)}}]{\setlength{\rightskip}{0pt plus 5cm}void Motor\+::set\+Actuation (
+\begin{DoxyParamCaption}
+\item[{int16\+\_\+t}]{actuation\+Signal}
+\end{DoxyParamCaption}
+)}\hypertarget{classMotor_a365fc68f12da73850f0d2c122e70d0ec}{}\label{classMotor_a365fc68f12da73850f0d2c122e70d0ec}
+
+
+The function that saturates and sets the duty cycle for the motor. 
+
+A method which uses the actuation signal to set a duty cycle.
+
+The function saturates the actuation signal to between -\/100 and 100 meaning that the resolution of the motor\+\_\+\+IN objects must be 100. 
+\begin{DoxyParams}{Parameters}
+{\em actuation\+Signal} & The signed value of duty cycle to be set for the motor. A positive value will set motor\+\_\+\+I\+N1 and a negative value will set motor\+\_\+\+I\+N2. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file motor\+Driver.\+cpp.
+
+
+
+References I\+N1\+\_\+chan, I\+N2\+\_\+chan, motor\+\_\+\+I\+N1, and motor\+\_\+\+I\+N2.
+
+
+
+Referenced by task\+\_\+motor\+::run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{motorDriver_8h}{motor\+Driver.\+h}\item 
+\hyperlink{motorDriver_8cpp}{motor\+Driver.\+cpp}\end{DoxyCompactItemize}
